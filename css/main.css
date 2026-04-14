@@ -1432,7 +1432,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c27fc9;
+    background: #8a29ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2650,19 +2650,6 @@ ul.breadcrumb li:last-child {
     color: #eee;
   }
 }
-.gt-header a,
-.gt-comments a,
-.gt-popup a {
-  border-bottom: 0;
-}
-.gt-container .gt-popup .gt-action.is--active::before {
-  top: 0.7em;
-}
-@media (prefers-color-scheme: dark) {
-  .gt-container .gt-header-textarea {
-    background-color: var(--card-bg-color) !important;
-  }
-}
 .search-active {
   overflow: hidden;
   margin-right: var(--dialog-scrollgutter, 0);
@@ -3317,10 +3304,8 @@ body {
 .highlight {
   background: var(--code-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
   margin: 16px 0;
   overflow: hidden;
-  box-shadow: none;
 }
 .highlight .gutter {
   background: var(--bg-tertiary);
@@ -3343,59 +3328,33 @@ body {
   font-size: 13px;
   line-height: 1.75;
 }
-/* 代码高亮 - 极简配色 */
-.highlight .keyword,
-.highlight .title,
-.highlight .params,
-.highlight .meta {
-  color: #635bff;
-  font-weight: 500;
-}
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet {
-  color: #05a081;
-}
-.highlight .comment,
-.highlight .quote,
-.highlight .deletion {
+/* 代码高亮 - 由NexT主题的highlight.js主题控制配色(light:default, dark:stackoverflow-dark) */
+/* 自定义CSS仅覆盖行号和代码区基础样式，不覆盖语法高亮颜色，确保深色模式下对比度正常 */
+/* 代码块语言标识符 - 覆盖NexT默认的水印透明度(0.1) */
+.code-lang {
+  opacity: 0.5;
+  font-size: 14px;
   color: var(--text-tertiary);
-  font-style: italic;
+  right: 8px;
+  top: 4px;
 }
-.highlight .number,
-.highlight .link,
-.highlight .attribute {
-  color: #d63384;
-}
-.highlight .function,
-.highlight .built_in {
-  color: #6f42c1;
-}
-.highlight .variable,
-.highlight .tag {
-  color: #0d6efd;
-}
-.highlight .class {
-  color: #fd7e14;
-}
-.highlight .regexp {
-  color: #e83e8c;
-}
-.highlight .literal {
-  color: #20c997;
-}
-/* 代码复制按钮 */
-.highlight .copy-button {
+/* 代码复制按钮 - 修正类名为NexT实际使用的.copy-btn */
+.copy-btn {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   border-radius: 4px;
-  padding: 4px 12px;
+  padding: 2px 8px;
   font-size: 12px;
   font-weight: 500;
   transition: all 0.2s ease;
+  opacity: 0;
 }
-.highlight .copy-button:hover {
+.highlight:hover .copy-btn,
+.code-container:hover .copy-btn {
+  opacity: 1;
+}
+.copy-btn:hover {
   background: var(--bg-tertiary);
   color: var(--text-primary);
   border-color: var(--border-color);
