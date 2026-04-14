@@ -1,0 +1,680 @@
+﻿/* ============================================================
+   极简科技风格 - Stripe 风格
+   Minimalist Tech Style (适配 Pisces Scheme)
+   ============================================================ */
+
+/* 全局变量 - 浅色模式 */
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f7;
+  --bg-tertiary: #f0f0f0;
+  --border-color: #e5e5e5;
+  --border-light: #f0f0f0;
+  --accent-color: #635bff;
+  --accent-hover: #4b45c6;
+  --code-bg: #f7f7f7;
+  --code-text: #1a1a1a;
+}
+
+/* 深色模式变量 - 使用 NexT 主题正确的选择器 */
+html[data-theme="dark"] {
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #808080;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --border-color: #333333;
+  --border-light: #2a2a2a;
+  --accent-color: #7c73ff;
+  --accent-hover: #9589ff;
+  --code-bg: #1a1a1a;
+  --code-text: #ffffff;
+}
+
+/* 同时支持 prefers-color-scheme 媒体查询（自动深色模式） */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-tertiary: #808080;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --border-color: #333333;
+    --border-light: #2a2a2a;
+    --accent-color: #7c73ff;
+    --accent-hover: #9589ff;
+    --code-bg: #1a1a1a;
+    --code-text: #ffffff;
+  }
+}
+
+/* 基础样式 */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Pisces Scheme 侧边栏样式优化
+   Pisces 布局: .column(左侧含header+sidebar) + .main-inner(右侧内容)
+   ============================================================ */
+
+/* 侧边栏品牌区域（含站点标题） */
+.site-brand-container {
+  background: var(--accent-color);
+}
+
+.site-meta {
+  padding: 20px 0;
+}
+
+.site-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  animation: none;
+}
+
+.site-title::before,
+.site-title::after {
+  display: none;
+}
+
+.site-title:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.site-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+}
+
+/* 侧边栏导航切换按钮 */
+.site-nav-toggle .toggle,
+.site-nav-right .toggle {
+  color: white;
+}
+
+.site-nav-toggle .toggle .toggle-line,
+.site-nav-right .toggle .toggle-line {
+  background: white;
+}
+
+/* 导航菜单 - Pisces 垂直菜单样式优化 */
+.site-nav {
+  background: var(--bg-primary);
+}
+
+.menu .menu-item a {
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 20px;
+  position: relative;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 0;
+}
+
+.menu .menu-item a:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.menu .menu-item-active a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* ============================================================
+   主内容区样式
+   ============================================================ */
+
+/* 内容区圆角和背景 */
+.main-inner {
+  background: var(--bg-primary);
+  border-radius: 8px;
+}
+
+/* 文章列表 */
+.posts-expand {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.posts-expand .post {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.posts-expand .post-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  text-shadow: none;
+}
+
+.posts-expand .post-title-link {
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.posts-expand .post-title-link:hover {
+  color: var(--accent-color);
+}
+
+.posts-expand .post-title-link::before,
+.posts-expand .post-title-link::after {
+  display: none;
+}
+
+.posts-expand .post-meta {
+  color: var(--text-tertiary);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.posts-expand .post-body {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.posts-expand .post-body p {
+  margin-bottom: 16px;
+}
+
+.posts-expand .post-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 文章内链接样式 */
+.post-body a {
+  color: var(--accent-color);
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.post-body a:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
+}
+
+/* 标签 */
+.post-tags {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.post-tags .post-tag {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.post-tags .post-tag:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  box-shadow: none;
+}
+
+/* ============================================================
+   侧边栏样式优化
+   ============================================================ */
+
+/* 侧边栏整体 */
+.sidebar-inner {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 侧边栏作者信息 */
+.site-author-image {
+  border-radius: 50%;
+  border: 3px solid var(--border-color);
+  transition: border-color 0.2s ease;
+}
+
+.site-author-image:hover {
+  border-color: var(--accent-color);
+}
+
+.site-author-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.site-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* 侧边栏社交链接 */
+.links-of-author-item a {
+  color: var(--text-secondary);
+  font-size: 14px;
+  transition: color 0.2s ease;
+  border-bottom: none;
+}
+
+.links-of-author-item a:hover {
+  color: var(--accent-color);
+}
+
+/* 侧边栏目录 (TOC) */
+.post-toc .toc-link {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.75;
+  display: block;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+  border-bottom: none;
+}
+
+.post-toc .toc-link:hover {
+  color: var(--text-primary);
+}
+
+.post-toc .toc-link.active {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.post-toc .toc-link.active::before {
+  display: none;
+}
+
+/* 侧边栏站点统计 */
+.site-state-item a {
+  color: var(--text-secondary);
+  border-bottom: none;
+  transition: color 0.2s ease;
+}
+
+.site-state-item a:hover {
+  color: var(--accent-color);
+}
+
+/* ============================================================
+   代码块样式
+   ============================================================ */
+
+.highlight {
+  background: var(--code-bg);
+  border: 1px solid var(--border-color);
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.highlight .gutter {
+  background: var(--bg-tertiary);
+  border-right: 1px solid var(--border-color);
+  padding: 16px 12px;
+  text-align: right;
+  user-select: none;
+}
+
+.highlight .gutter .line {
+  color: var(--text-tertiary);
+  font-size: 13px;
+  line-height: 1.75;
+  text-shadow: none;
+}
+
+.highlight .code {
+  padding: 16px;
+}
+
+.highlight .code .line {
+  color: var(--code-text);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* 代码高亮 - 由NexT主题的highlight.js主题控制配色(light:default, dark:stackoverflow-dark) */
+/* 自定义CSS仅覆盖行号和代码区基础样式，不覆盖语法高亮颜色，确保深色模式下对比度正常 */
+
+/* 代码块语言标识符 - 覆盖NexT默认的水印透明度(0.1) */
+.code-lang {
+  opacity: 0.5;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  right: 8px;
+  top: 4px;
+}
+
+/* 代码复制按钮 - 修正类名为NexT实际使用的.copy-btn */
+.copy-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.highlight:hover .copy-btn,
+.code-container:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* 行内代码 - 使用更精确的选择器避免影响代码块 */
+.post-body code {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+/* ============================================================
+   按钮样式
+   ============================================================ */
+
+.btn {
+  background: var(--accent-color);
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 91, 255, 0.3);
+}
+
+/* ============================================================
+   分页样式
+   ============================================================ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 48px;
+}
+
+.pagination .page-number,
+.pagination .extend {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+
+.pagination .page-number:hover,
+.pagination .extend:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  box-shadow: none;
+}
+
+.pagination .page-number.current {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+
+/* ============================================================
+   页脚样式
+   ============================================================ */
+
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-inner {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.footer-inner a {
+  color: var(--text-secondary);
+  border-bottom: none;
+}
+
+.footer-inner a:hover {
+  color: var(--accent-color);
+}
+
+/* ============================================================
+   搜索框样式
+   ============================================================ */
+
+.local-search-popup {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.local-search-popup input {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.local-search-popup input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+}
+
+.local-search-popup .search-result-list {
+  border-top: 1px solid var(--border-color);
+}
+
+.local-search-popup .search-result-list li {
+  border-bottom: 1px solid var(--border-light);
+  padding: 12px 16px;
+}
+
+.local-search-popup .search-result-title {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.local-search-popup .search-keyword {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-shadow: none;
+}
+
+/* ============================================================
+   滚动条样式
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* ============================================================
+   返回顶部按钮
+   ============================================================ */
+
+.back-to-top {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* 阅读进度条 */
+#reading-progress-bar {
+  background: var(--accent-color);
+}
+
+/* ============================================================
+   标签云样式
+   ============================================================ */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-cloud .tag-cloud-item {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag-cloud .tag-cloud-item:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+
+/* ============================================================
+   分类页面样式
+   ============================================================ */
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.category-list-item:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+}
+
+.category-list-link {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: none;
+}
+
+.category-list-count {
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+/* ============================================================
+   响应式适配
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .posts-expand .post-title {
+    font-size: 20px;
+  }
+
+  .posts-expand .post-body {
+    font-size: 15px;
+  }
+}

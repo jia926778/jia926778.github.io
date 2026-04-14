@@ -1,0 +1,338 @@
+# ===============================================================
+# NexT Theme Configuration (Alternate Theme Config)
+# Hexo 8.x 推荐方式：放在站点根目录的 _config.next.yml
+# 此文件会自动合并到 themes/next/_config.yml，覆盖默认配置
+# ===============================================================
+
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+scheme: Pisces
+
+# Dark Mode
+darkmode: true
+
+# Darkmode switch button (hexo-next-darkmode plugin)
+darkmode_js:
+  enable: true
+  bottom: '64px'
+  right: 'unset'
+  left: '32px'
+  time: '0.5s'
+  mixColor: 'transparent'
+  backgroundColor: 'transparent'
+  buttonColorDark: '#100f2c'
+  buttonColorLight: '#fff'
+  isActivated: false
+  saveInCookies: true
+  label: '🌓'
+  autoMatchOsTheme: true
+
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+custom_logo: #/uploads/custom-logo.png
+
+# Creative Commons 4.0 International License.
+creative_commons:
+  license: by-nc-sa
+  size: small
+  sidebar: false
+  post: true
+
+# Open graph settings
+open_graph:
+  enable: true
+  options:
+    twitter_card: summary_large_image
+
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+
+# Enable / Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: false
+
+# ---------------------------------------------------------------
+# Sidebar Settings
+# ---------------------------------------------------------------
+sidebar:
+  position: left
+  display: post
+  offset: 12
+
+# Sidebar Avatar
+avatar:
+  url: /images/avatar.jpg
+  rounded: true
+  rotated: false
+
+# Social Links
+social:
+  GitHub: https://github.com/jia926778 || fab fa-github
+  E-Mail: mailto:1094568846@qq.com || fa fa-envelope
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# ---------------------------------------------------------------
+# Post Settings
+# ---------------------------------------------------------------
+# Post wordcount display settings
+symbols_count_time:
+  separated_meta: true
+  item_text_total: false
+
+# Use icon instead of the symbol # to indicate the tag at the bottom of the post
+tag_icon: false
+
+# Donate (Sponsor) settings
+reward_settings:
+  enable: false
+  animation: false
+
+# RSS
+rss: /atom.xml
+
+# Related popular posts (disabled: articles lack embedding_vector front-matter)
+related_posts:
+  enable: false
+
+# ---------------------------------------------------------------
+# Custom Page Settings
+# ---------------------------------------------------------------
+tagcloud:
+  min: 12
+  max: 30
+  amount: 200
+  orderby: name
+  order: 1
+
+# ---------------------------------------------------------------
+# Misc Theme Settings
+# ---------------------------------------------------------------
+# Set the text alignment in posts / pages.
+text_align:
+  desktop: justify
+  mobile: justify
+
+# Browser header panel color.
+theme_color:
+  light: "#635bff"
+  dark: "#635bff"
+
+codeblock:
+  theme:
+    light: default
+    dark: stackoverflow-dark
+  copy_button:
+    enable: true
+    style: mac
+  fold:
+    enable: false
+    height: 500
+  language: true
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# Reading progress bar
+reading_progress:
+  enable: true
+  start_at: left
+  position: top
+  reversed: false
+  color: "#635bff"
+  height: 2px
+
+# Bookmark Support
+bookmark:
+  enable: false
+
+# `Follow me on GitHub` banner in the top-right corner.
+github_banner:
+  enable: false
+
+# ---------------------------------------------------------------
+# Font Settings
+# ---------------------------------------------------------------
+font:
+  enable: false
+
+# ---------------------------------------------------------------
+# SEO Settings
+# ---------------------------------------------------------------
+# If true, site-subtitle will be added to the title of index page.
+index_with_subtitle: false
+
+# Automatically add external URL with Base64 encrypt & decrypt.
+exturl: false
+exturl_icon: true
+
+# Google Webmaster tools verification.
+google_site_verification:
+
+# Baidu Webmaster tools verification.
+baidu_site_verification:
+
+# Yandex Webmaster tools verification.
+yandex_site_verification:
+
+# ---------------------------------------------------------------
+# Tags Settings
+# ---------------------------------------------------------------
+note:
+  style: simple
+  icons: false
+  light_bg_offset: 0
+
+tabs:
+  sticky: false
+  transition:
+    tabs: false
+    labels: true
+
+# ---------------------------------------------------------------
+# Third Party Plugins & Services Settings
+# ---------------------------------------------------------------
+# Math Formulas Render Support
+math:
+  every_page: false
+  mathjax:
+    enable: false
+    tags: none
+  katex:
+    enable: false
+    copy_tex: false
+
+# ---------------------------------------------------------------
+# External Libraries
+# ---------------------------------------------------------------
+# Easily enable fast Ajax navigation on your website.
+pjax: true
+
+# FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
+fancybox: true
+
+# Medium Zoom is a JavaScript library for zooming images like Medium.
+mediumzoom: false
+
+# Vanilla JavaScript plugin for lazyloading images.
+lazyload: true
+
+# Automatically insert whitespace between CJK and half-width characters.
+pangu: false
+
+# Prefetch links based on what is in the user's viewport.
+quicklink:
+  enable: false
+  home: true
+  archive: true
+  delay: true
+  timeout: 3000
+  priority: true
+
+# ---------------------------------------------------------------
+# Animation Settings
+# ---------------------------------------------------------------
+motion:
+  enable: false
+
+# Progress bar in the top during page loading.
+pace:
+  enable: false
+
+# Generate a ribbon in your website with HTML5 canvas.
+canvas_ribbon:
+  enable: false
+
+# ---------------------------------------------------------------
+# Comments Settings
+# ---------------------------------------------------------------
+comments:
+  style: tabs
+  active: # gitalk (启用Gitalk后改为gitalk)
+  storage: true
+  lazyload: false
+
+# Gitalk (暂时禁用，需配置CORS proxy后启用)
+# 启用前需完成：
+# 1. 部署CORS代理（推荐Cloudflare Workers方案）
+# 2. 在下方proxy字段填入代理地址，格式如：
+#    proxy: https://your-proxy.workers.dev/https://github.com/login/oauth/access_token
+# 3. 将enable改为true
+gitalk:
+  enable: false
+  github_id: jia926778
+  repo: jia926778.github.io
+  client_id: Iv23liVphA8jcXJlAbTm
+  client_secret: 027a9972235ab3d6cbdbc97770c5737dda0e005b
+  admin_user: jia926778
+  distraction_free_mode: true
+  proxy: # 需填入CORS代理地址，如 https://your-proxy.workers.dev/https://github.com/login/oauth/access_token
+  language: zh-CN
+
+# Utterances
+utterances:
+  enable: false
+  repo: user-name/repo-name
+  issue_term: pathname
+  theme: github-light
+
+# ---------------------------------------------------------------
+# Statistics and Analytics
+# ---------------------------------------------------------------
+# Google Analytics (leave empty if not used)
+google_analytics:
+  tracking_id:
+
+# Baidu Analytics
+baidu_analytics:
+
+# Show Views / Visitors of the website / page with busuanzi.
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: far fa-eye
+  updated: false
+
+# ---------------------------------------------------------------
+# Search Services
+# ---------------------------------------------------------------
+# Algolia Search
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+
+# Local Search
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+  preview: true
+
+# ---------------------------------------------------------------
+# CDN Settings
+# ---------------------------------------------------------------
+vendors:
+  internal: local
+  plugins: jsdelivr
