@@ -28,7 +28,7 @@
 <meta property="og:description" content="大模型微调与RAG技术问答本文针对大模型微调、对齐及检索增强生成中的核心问题，进行系统性的技术解答，覆盖从参数选择到工程落地的全流程实践。 一、LoRA 微调 7B 模型的核心配置与差异1.1 LoRA 秩（Rank）的选择策略LoRA 的秩是控制低秩矩阵拟合能力的核心参数，针对 7B 规模的模型，推荐的选择逻辑如下：  默认基准值：优先选择r&#x3D;8，这是兼顾效果与显存占用的最优平衡点，能够覆盖绝大">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-14T05:30:00.000Z">
-<meta property="article:modified_time" content="2026-04-14T12:05:28.621Z">
+<meta property="article:modified_time" content="2026-04-14T13:19:27.438Z">
 <meta property="article:author" content="jia">
 <meta property="article:tag" content="AI大模型">
 <meta property="article:tag" content="RAG技术问答">
@@ -80,7 +80,7 @@
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 <link rel="alternate" href="/atom.xml" title="jia926778的个人博客" type="application/atom+xml">
-</head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="headband"></div>
@@ -258,7 +258,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-04-14 13:30:00 / 修改时间：20:05:28" itemprop="dateCreated datePublished" datetime="2026-04-14T13:30:00+08:00">2026-04-14</time>
+      <time title="创建时间：2026-04-14 13:30:00 / 修改时间：21:19:27" itemprop="dateCreated datePublished" datetime="2026-04-14T13:30:00+08:00">2026-04-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -604,8 +604,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2026/04/13/UV_%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7%E5%8D%B8%E8%BD%BD%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" rel="prev" title="UV使用一站式教程">
-                  <i class="fa fa-angle-left"></i> UV使用一站式教程
+                <a href="/2026/04/13/uv_%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7%E5%8D%B8%E8%BD%BD%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" rel="prev" title="uv使用一站式教程">
+                  <i class="fa fa-angle-left"></i> uv使用一站式教程
                 </a>
             </div>
             <div class="post-nav-item">
@@ -643,7 +643,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">14k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -692,6 +692,26 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jia926778","repo":"jia926778.github.io","client_id":"Ov23li5R8w1Zz9JZ9JZQ","client_secret":"027a9972235ab3d6cbdbc97770c5737dda0e005b","admin_user":"jia926778","distraction_free_mode":true,"proxy":null,"language":"zh-CN","body":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"ec57057a4e99b708e7670eb36c8e0d4c"}</script>

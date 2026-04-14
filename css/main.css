@@ -1432,7 +1432,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #676722;
+    background: #981653;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3136,9 +3136,9 @@ body {
 }
 .menu .menu-item a {
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  padding: 5px 20px;
+  padding: 8px 20px;
   position: relative;
   transition: color 0.2s ease, background-color 0.2s ease;
   border-radius: 0;
