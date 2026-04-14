@@ -1,9 +1,8 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
-Disallow: /images/
 
 Sitemap: https://jia926778.github.io/sitemap.xml
