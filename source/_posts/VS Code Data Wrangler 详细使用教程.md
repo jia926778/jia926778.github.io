@@ -5,6 +5,7 @@ tags: [VS Code, 工具使用, Data Wrangler, 数据分析]
 categories: 工具使用
 toc: true
 ---
+
 # VS Code Data Wrangler 详细使用教程
 
 Data Wrangler 是微软官方推出的 VS Code 数据清洗工具，它将 Pandas 的强大能力与可视化交互界面结合，让你**不用手写代码，点点鼠标就能完成数据清洗，同时自动生成可复用的 Pandas 代码**，完美解决 “80% 时间做数据清洗” 的痛点。
@@ -436,4 +437,4 @@ df = pd.read_csv("your_file.csv", encoding="gbk") # 常见的中文编码是gbk
 
 ---
 
-Data Wrangler 不是要替代 Pandas，而是帮你降低数据清洗的门槛，同时让你通过可视化操作学习 Pandas 代码，非常适合新手和需要快速处理数据的分析师。
+Data Wrangler 不是要替代 Pandas，而是帮你降低数据清洗的门槛，同时让你通过可视化操作学习 Pandas 代码，非常适合新手和需要快速处理数据的分析师。希望这份教程能帮你快速上手！
