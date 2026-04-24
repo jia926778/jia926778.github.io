@@ -1,8 +1,8 @@
 ---
 title: 大模型微调与RAG技术问答
 date: 2026-04-14 13:30:00
-tags: [大模型微调, RAG技术问答, AI大模型]
-categories: 大模型微调
+tags: [模型微调, RAG技术问答, AI大模型]
+categories: 模型微调
 toc: true
 ---
 
