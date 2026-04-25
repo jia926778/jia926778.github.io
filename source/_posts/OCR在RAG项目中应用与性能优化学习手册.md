@@ -1,6 +1,6 @@
 ---
 title: OCR在RAG项目中应用
-date: 2026-04-25 13:30:00
+date: 2026-04-24 13:30:00
 tags: [OCR, RAG技术问答, AI大模型]
 categories: OCR
 toc: true

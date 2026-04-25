@@ -1,6 +1,6 @@
 ---
 title: MinerU 文档解析引擎 学习手册
-date: 2026-04-25 18:30:00
+date: 2026-04-22 18:30:00
 tags: [MinerU, RAG技术问答, AI大模型]
 categories: MinerU
 toc: true
