@@ -1,6 +1,6 @@
 ---
 title: FastMCP学习手册
-date: 2026-04-31 19:30:00
+date: 2026-05-03 19:30:00
 tags: [Agent, 技术分享, FastMCP]
 categories: Agent
 toc: true
