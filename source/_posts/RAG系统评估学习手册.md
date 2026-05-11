@@ -2,7 +2,7 @@
 title: RAG 系统评估
 date: 2026-04-24 19:30:00
 tags: [RAG, 技术分享, RAG 系统评估]
-categories: RAG
+categories: Agent
 toc: true
 ---
 # RAG 系统评估

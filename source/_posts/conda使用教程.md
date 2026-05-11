@@ -2,7 +2,7 @@
 title: conda使用教程
 date: 2026-04-14 14:30:00
 tags: [conda, 工具使用, python, AI]
-categories: 技术教程
+categories: 工具使用
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: argparse 使用教程
 date: 2026-04-24 12:30:00
 tags: [argparse, Python, 模型微调]
-categories: 模型微调
+categories: Agent
 toc: true
 ---
 # Python argparse 详细使用教程

@@ -2,7 +2,7 @@
 title: MarkItDown 使用指南
 date: 2026-04-20 21:30:00
 tags: [MarkItDown, RAG, 技术分享, 文档识别]
-categories: MarkItDown
+categories: Agent
 toc: true
 ---
 # MarkItDown 使用指南

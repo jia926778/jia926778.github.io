@@ -2,7 +2,7 @@
 title: 企业级中文RAG项目开发方案
 date: 2026-03-28 21:30:00
 tags: [Agent, RAG, 技术分享, AI大模型]
-categories: RAG
+categories: Agent
 toc: true
 ---
 # 企业级中文RAG项目开发方案

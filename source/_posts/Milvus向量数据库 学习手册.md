@@ -2,7 +2,7 @@
 title: Milvus学习手册
 date: 2026-04-20 21:30:00
 tags: [Agent, RAG, 技术分享, 向量数据库]
-categories: Milvus
+categories: Agent
 toc: true
 ---
 

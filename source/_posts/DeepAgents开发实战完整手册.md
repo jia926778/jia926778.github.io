@@ -2,7 +2,7 @@
 title: DeepAgents开发实战完整手册
 date: 2026-04-15 13:30:00
 tags: [大模型框架, agent框架, AI大模型开发]
-categories: 大模型框架
+categories: Agent
 toc: true
 ---
 

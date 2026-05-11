@@ -2,7 +2,7 @@
 title: uv使用一站式教程
 date: 2026-04-13 14:30:00
 tags: [UV, 工具使用, AI]
-categories: 技术教程
+categories: 工具使用
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: RAGFlow 学习教程
 date: 2026-03-24 18:30:00
 tags: [RAGFlow, 技术分享, RAG]
-categories: RAG
+categories: Agent
 toc: true
 ---
 
