@@ -1,11 +1,11 @@
 ---
-title: .gitignore 使用手册
-date: 2026-05-10 13:30:00
+title: Gitignore 使用手册
+date: 2026-05-11 13:30:00
 tags: [.gitignore, 工具使用, git]
 categories: 工具使用
 toc: true
 ---
-# .gitignore 使用手册
+# Gitignore 使用手册
 
 
 ## 文档核心说明
