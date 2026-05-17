@@ -162,38 +162,113 @@ mvn -v
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd">
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
 
-  <!-- 1. 本地仓库配置：自定义依赖包存放路径，默认在C盘用户目录下的.m2/repository -->
-  <localRepository>D:/dev/maven-repository</localRepository>
+  <!-- 本地仓库路径：建议使用非中文无空格路径，避免兼容问题 -->
+  <localRepository>D:/works/maven/repository</localRepository>
 
-  <!-- 2. 镜像源配置：国内优先使用阿里云镜像，解决国外中央仓库下载慢/失败问题 -->
+  <pluginGroups></pluginGroups>
+  <proxies></proxies>
+  <servers></servers>
+
+  <!-- 国内镜像仓库优化配置：覆盖主流中央仓库，补充网易/腾讯镜像 -->
   <mirrors>
+    <!-- 阿里云核心镜像（首选）：覆盖最全，速度最快 -->
     <mirror>
       <id>aliyunmaven</id>
-      <name>阿里云公共仓库</name>
-      <url>https://maven.aliyun.com/repository/public</url>
+      <name>Aliyun Maven Repository</name>
+      <url>https://maven.aliyun.com/repository/central</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+
+    <!-- 阿里云spring专属镜像（解决spring组件下载慢） -->
+    <mirror>
+      <id>aliyun-spring</id>
+      <name>Aliyun Spring Maven Repository</name>
+      <url>https://maven.aliyun.com/repository/spring</url>
+      <mirrorOf>spring-plugin,spring-milestones,spring-snapshots</mirrorOf>
+    </mirror>
+
+    <!-- 华为云镜像（备用1） -->
+    <mirror>
+      <id>huaweicloud</id>
+      <name>HuaweiCloud Maven Repository</name>
+      <url>https://repo.huaweicloud.com/repository/maven/</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+
+    <!-- 网易云镜像（备用2） -->
+    <mirror>
+      <id>163maven</id>
+      <name>NetEase Maven Repository</name>
+      <url>http://mirrors.163.com/maven/repository/maven-public/</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+
+    <!-- 腾讯云镜像（备用3） -->
+    <mirror>
+      <id>tencentmaven</id>
+      <name>Tencent Maven Repository</name>
+      <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+
+    <!-- 中央仓库镜像兜底（国内可访问的官方镜像） -->
+    <mirror>
+      <id>maven-central</id>
+      <name>Central Maven Repository</name>
+      <url>https://repo1.maven.org/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
 
-  <!-- 3. 全局JDK编译版本配置：避免每个项目都重复配置JDK版本 -->
+  <!-- 全局构建配置：适配国内开发环境 -->
   <profiles>
     <profile>
-      <id>jdk-1.8</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-        <jdk>1.8</jdk>
-      </activation>
+      <id>default-global-config</id>
       <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <!-- JDK版本可根据实际需求修改（1.8/11/17/21） -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.compilerVersion>21</maven.compiler.compilerVersion>
+        <!-- 强制UTF-8编码，避免中文乱码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 解决maven-resources-plugin编码问题 -->
+        <maven.resources.encoding>UTF-8</maven.resources.encoding>
+        <!-- 跳过SSL校验（部分内网/镜像站可能证书问题） -->
+        <maven.wagon.http.ssl.insecure>true</maven.wagon.http.ssl.insecure>
+        <maven.wagon.http.ssl.allowall>true</maven.wagon.http.ssl.allowall>
       </properties>
     </profile>
+
+    <!-- 激活国内仓库配置 -->
+    <profile>
+      <id>china-mirrors</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://maven.aliyun.com/repository/public</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>https://maven.aliyun.com/repository/public</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>false</enabled></snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
   </profiles>
+
+  <!-- 激活所有优化配置 -->
+  <activeProfiles>
+    <activeProfile>default-global-config</activeProfile>
+    <activeProfile>china-mirrors</activeProfile>
+  </activeProfiles>
 
 </settings>
 ```
